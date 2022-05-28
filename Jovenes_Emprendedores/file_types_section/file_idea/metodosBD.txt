@@ -1,0 +1,96 @@
+metodo para ingresar datos:
+  public void InsertPqrs(EIdea pqrs)// prueba de conexión
+    {
+        using (var db = new Mapping())
+        {
+            db.Idea.Add(pqrs);
+            db.SaveChanges();  //-> confirm the save in the table
+        }
+    }
+
+
+comparar las id_forneas
+switch (user.Id_role1)
+    {
+        case 1:
+                Login1.FailureText = "Bienvenido" +" "+ user.Name;
+         //   Response.Redirect("Administrador/Inventario.aspx");
+            break;
+        case 2:
+                    Login1.FailureText = "Bienvenido" + " " + user.Name;
+                    // Response.Redirect("Vendedor/RegistrarProductos.aspx");
+                    break;
+        case 3:
+                    Login1.FailureText = "Bienvenido" + " " + user.Name;
+                  //  Response.Redirect("Cliente/CatalogoCliente.aspx");
+            break;
+
+
+
+
+
+/__________________________________________________________--LOGIN--_______________________________________________________/
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+public partial class View_Login : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+
+    }
+
+
+
+    protected void Login1_Authenticate(object sender, AuthenticateEventArgs e)
+    {
+        EUserInformation user = new EUserInformation();
+        user.Username = Login1.UserName;
+        user.Password = Login1.Password;
+        user = new Daologin().login(user);
+        if (user == null)
+        {
+            Login1.FailureText = "USUARIO O CLAVE INCORRECTA";
+            return;
+        }
+        else
+        {
+            Session["user"] = user;
+
+
+
+             switch (user.Id_role1)
+    {
+        case 1:
+                  
+                    ClientScriptManager cm = this.ClientScript;
+                    cm.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('BIENVENIDO SEÑOR ADMINISTRADOR'); window.location = 'Login.aspx';</script>");
+
+
+                    break;
+        case 2:
+                    ClientScriptManager n = this.ClientScript;
+                    n.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('BIENVENIDO INVERSOR ESPERAMOS QUE ENCUENTRES UN PROYECTO DE INTERES'); window.location = 'Login.aspx';</script>");
+
+                    break;
+        case 3:
+                    ClientScriptManager j = this.ClientScript;
+                    j.RegisterClientScriptBlock(this.GetType(), "", "<script type='text/javascript'>alert('BIENVENIDO JOVEN INNOVADOR ESPERAMOS QUE ENCUENTRES LA AYUDA QUE NECECITAS'); window.location = 'Login.aspx';</script>");
+
+
+                    break;
+
+
+
+    }
+
+        }
+
+
+    }
+
+    }

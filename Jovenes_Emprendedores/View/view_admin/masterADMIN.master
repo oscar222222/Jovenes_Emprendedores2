@@ -1,0 +1,80 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="~/Controller/admin/masterADMIN.master.cs" Inherits="View_view_admin_masterADMIN" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Innovador</title>
+    <link href="../../App_Themes/css/Inicio.css" rel="stylesheet" type="text/css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style4 {
+            width: 136px;
+        }
+    </style>
+</head>
+<body>
+
+
+    <form id="form1" runat="server">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+             
+            <ul class="navbar-nav ">
+                <!-- Avatar -->
+                <li class="nav-item">
+                        <a class="navbar-brand" href="../Index.aspx">
+                            <img src="../../imagenes/logo_small.png" width="240px" alt="" style="padding-left: 10%;">
+                        </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        </li>
+                <li class="nav-item dropdown">
+                    <table class="w-100">
+                        <tr>
+                            <td class="auto-style4">
+                    <a class="nav-link dropdown-toggle d-flex align-items-center" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+                        <img
+                            src="../../imagenes/icono.png"
+                            class="rounded-circle"
+                            height="5%"
+                            alt="icon"
+                            loading="lazy" width="100px" />
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="EditPerfil.aspx">Mi perfil</a>
+                        <a class="dropdown-item" href="#">-----</a>
+                        
+                        <div class="dropdown-divider"></div>
+                        <a onclick="alert('Cerrando sesión')" class="dropdown-item" href="../Index.aspx">Cerrar sesión</a>
+                    </div>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </td>
+                            <td class="text-end">
+                        <asp:Button ID="BT_RedREGIS" class="btn btn-outline-danger"  runat="server" Text="AÑADIR ADMINISTRADOR" BorderColor="#00CCFF" ForeColor="#00CCFF" OnClick="BT_RedREGIS_Click" Width="246px" Font-Names="Segoe UI Historic"  />
+                            </td>
+                            <td class="text-end">
+                        <asp:Button ID="BT_reg" class="btn btn-outline-danger"  runat="server" Text="REGISTROS" BorderColor="#00CCFF" ForeColor="#00CCFF" OnClick="BT_reg_Click" Width="246px" Font-Names="Segoe UI Historic"  />
+                            </td>
+                        </tr>
+                    </table>
+                </li>
+
+               
+            </ul>
+        </div>
+    </nav>
+
+
+        <div>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
